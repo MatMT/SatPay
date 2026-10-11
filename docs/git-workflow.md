@@ -30,7 +30,11 @@ Los Non-Devs que solo tocan `/docs` no necesitan pasar por la CLI: pueden editar
 
 ## Branch Protection Rules
 
-Configurar en *Settings → Rules → Rulesets* (o *Branches → Add rule*).
+Importar [`.github/rulesets/protect-main-and-dev.json`](../.github/rulesets/protect-main-and-dev.json) en *Settings → Rules → Rulesets → New ruleset → Import a ruleset*. Protege `main` y `dev` con PR obligatorio, 1 aprobación, hilos resueltos, squash, sin force push, sin borrado y sin bypass.
+
+Se deja fuera a propósito la regla de status checks: agregarla desde la UI cuando exista el workflow de CI (ver Notas). La restricción "`main` solo recibe PRs desde `dev`" no se puede imponer con rulesets; es una convención del equipo.
+
+Detalle de lo que cubre:
 
 ### `dev`
 
