@@ -1,0 +1,8 @@
+# Default: a dev reviews everything
+*                         @adiel23 @MatMTByElias
+
+# Database changes need a dev, never ship a migration unreviewed
+/packages/database/       @adiel23 @MatMTByElias
+
+# Specs, research and UX are shared with the non-dev track
+/docs/                    @100a-dot @Fonsii319 @adiel23 @MatMTByElias
