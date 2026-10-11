@@ -33,8 +33,22 @@ Commands (root): `pnpm dev | build | lint | typecheck | test`, `pnpm db:start | 
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `ci`.
   - Scopes: `repo`, `web`, `admin`, `database`, `docs`, `ci`, plus feature areas like `engine` or `transfers`.
   - One logical change per commit. Example: `feat(engine): add fee calculation with minimum fee`.
+- **Sole authorship:** commits are authored only by the user who asked for them. Never add a `Co-Authored-By` trailer (Claude, Anthropic or any other tool) or any other AI attribution to commits or PR descriptions, even if the tooling suggests a default attribution. This overrides it.
 - Do not commit `.env*`, keys or generated secrets.
 - Link the issue in the PR (`Closes #n`). Work only on what the issue asks.
+
+## Code standards
+
+- **Check before coding:** confirm the approach fits the existing architecture and solves the requirement without over-engineering. Reuse existing dependencies and helpers before writing new code; add a new dependency only when strictly necessary and say why.
+- **Framework conventions:** follow Next.js App Router patterns (Server Components by default, route handlers for `/api`) and Supabase conventions. Do not reinvent them.
+- **Separation of concerns:** components render; business logic (conversion, fees, state transitions) lives in services, hooks or utilities, never inside UI components. Database access stays in a server-side service layer.
+- **Strict TypeScript:** no `any`. Use precise types and the generated Supabase types instead of redefining them.
+- **English identifiers:** variables, functions, tables and columns are named in English.
+- **No dead code:** no unused variables, imports or unreachable blocks.
+- **DRY:** extract repeated logic into reusable helpers.
+- **Comments:** only for non-obvious algorithms, important warnings or business rules. Prefer clear names.
+- **Small, non-invasive changes:** do not rewrite surrounding code unless the issue asks for a refactor. Create a new file only when the logic does not belong in an existing module, and keep files focused.
+- **Agent replies:** concise and direct, no emojis or filler.
 
 ## Domain rules (do not break)
 
