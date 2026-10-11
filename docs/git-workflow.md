@@ -30,7 +30,7 @@ Los Non-Devs que solo tocan `/docs` no necesitan pasar por la CLI: pueden editar
 
 ## Branch Protection Rules
 
-Importar [`.github/rulesets/protect-main-and-dev.json`](../.github/rulesets/protect-main-and-dev.json) en *Settings → Rules → Rulesets → New ruleset → Import a ruleset*. Protege `main` y `dev` con PR obligatorio, 1 aprobación, hilos resueltos, squash, sin force push, sin borrado y sin bypass.
+Importar [`.github/rulesets/protect-main-and-dev.json`](../.github/rulesets/protect-main-and-dev.json) en *Settings → Rules → Rulesets → New ruleset → Import a ruleset*. Protege `main` y `dev` con PR obligatorio, 1 aprobación, hilos resueltos, squash, sin force push y sin borrado. El rol Admin del repo puede saltarse la aprobación **solo a través de un PR** (modo `pull_request`), para no bloquear al dueño del repo cuando el otro Dev no está disponible. Nunca puede hacer push directo.
 
 Se deja fuera a propósito la regla de status checks: agregarla desde la UI cuando exista el workflow de CI (ver Notas). La restricción "`main` solo recibe PRs desde `dev`" no se puede imponer con rulesets; es una convención del equipo.
 
@@ -54,7 +54,7 @@ Lo mismo que `dev`, más:
 
 - [x] Solo se acepta PR cuyo origen es `dev`
 - [x] Required approvals: **1** de un Dev (`@MatMTByElias` o `@adiel23`)
-- [x] Do not allow bypassing the above settings (incluye administradores)
+- [x] Bypass solo para el rol Admin y únicamente vía PR (ver arriba)
 
 ### Notas
 
