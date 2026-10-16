@@ -2,6 +2,7 @@
 
 Simulador transaccional y transparente de remesas, construido para **CUBO+ | The Build Sprint 2026** (reto *Remittance Service*).
 
+
 SatPay modela el flujo completo de una remesa: el remitente ingresa un monto, ve la conversión y las comisiones por separado, crea una transferencia teórica y sigue su progreso hasta que el destinatario la recibe. Está pensado para usuarios que no dominan la terminología financiera ni de Bitcoin, y su arquitectura permite conectarse a futuro con Bitcoin y Lightning Network.
 
 > **Todo es simulado.** No se custodia ni se mueve dinero real. Las tasas de cambio son estáticas o mock.
